@@ -10,13 +10,31 @@
       'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
       'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
     ];
+    var DESCRIPTION_TEMPLATE = [
+      'Летний чил на югах. #тай #отдых #лето #чил #travel #travelgram #summergram #chill',
+      '#fun #party #cool #young',
+      'Отдыхаем... #chill #relax #group #photo',
+      'Will you still love me when I\'m no longer young and beautiful? (c) Ленин',
+      'Как же круто тут кормят #food #foodgram #instafood #delicious #yummy',
+      'Если чётко сформулировать желание для Вселенной, то всё обязательно сбудется. Верьте в себя. Главное хотеть и мечтать..... / I\'ve bought some potatoes.'
+    ];
     var NAME_TEMPLATE = ['Маша', 'Петя', 'Коля', 'Даша', 'Саша'];
     var data = {
       url: 'photos/' + photoId + '.jpg',
-      description: 'описание фотографии',
       likes: window.util.getRandomNumber(15, 200),
-      comments: COMMENT_TEMPLATE[window.util.getRandomNumber(0, 5)],
-      name: NAME_TEMPLATE[window.util.getRandomNumber(0, 4)]
+      comments: [
+        {avatar: 'img/avatar-' + window.util.getRandomNumber(1, 6) + '.svg',
+          message: COMMENT_TEMPLATE[window.util.getRandomNumber(0, 5)],
+          name: NAME_TEMPLATE[window.util.getRandomNumber(0, 4)]
+        },
+        {avatar: 'img/avatar-' + window.util.getRandomNumber(1, 6) + '.svg',
+          message: COMMENT_TEMPLATE[window.util.getRandomNumber(0, 5)],
+          name: NAME_TEMPLATE[window.util.getRandomNumber(0, 4)]
+        },
+        {avatar: 'img/avatar-' + window.util.getRandomNumber(1, 6) + '.svg',
+          message: COMMENT_TEMPLATE[window.util.getRandomNumber(0, 5)],
+          name: NAME_TEMPLATE[window.util.getRandomNumber(0, 4)]}],
+      description: DESCRIPTION_TEMPLATE[window.util.getRandomNumber(0, 5)]
     };
     return data;
   };
